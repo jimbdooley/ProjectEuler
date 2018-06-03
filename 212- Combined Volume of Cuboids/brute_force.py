@@ -8,6 +8,7 @@ since this problem deals with cubes, we can go in chunks instead of continuously
 '''
 import heapq
 import sets
+import time
 
 def find_existence_of_points(points):
     if len(points) > 0:
@@ -203,8 +204,14 @@ def make_cuboid_list(vals):
         cuboids.append([x0y0z0,dxdydz])
     return cuboids
     
+
+start = time.time()
 #cuboids = make_cuboid_list([53,54,48,257,51,81,2])
-cuboids = make_cuboid_list([10**4,10**4,10**4,399,399,399,100])
-print(cuboids)
+cuboids = make_cuboid_list([10**4,10**4,10**4,399,399,399,80])
+#print(cuboids)
 total_volume = find_volume_of_cuboid_union(cuboids)
 print(total_volume)
+
+
+end = time.time()
+print(end - start)
